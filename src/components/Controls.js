@@ -1,23 +1,15 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import RadioButton from './RadioButton';
 
-export default function Controls() {
-    const [asc, setAsc] = useState(false);
-    const [desc, setDesc] = useState(false);
+//TODO check how to pass down props from cardgame
+//props: sortmode, handleAscChange, handleDescChange
+export default function Controls({sortMode, handleAscChange, handleDescChange, handleSubmit}) {
 
-    const handleAscChange = () => {
-        setAsc(!asc);
-    };
-
-    const handleDescChange = () => {
-        setDesc(!desc);
-    };
-    
     return(
-        <div>
-           <RadioButton label="SORT ASC" value={asc} onChange={handleAscChange} />
-           <RadioButton label="SORT DESC" value={desc} onChange={handleDescChange} />
-        </div>
+        <form onSubmit={handleSubmit}>
+           <RadioButton label="SORT ASC" value={sortMode === 'asc'} onChange={handleAscChange} />
+           <RadioButton label="SORT DESC" value={sortMode === 'desc'} onChange={handleDescChange} />
+           <input type="submit" value="Submit" />
+        </form>
     )
 }

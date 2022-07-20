@@ -5,9 +5,9 @@ import Cardgame from './components/CardGame';
 
 function App() {
     return (
-        <segment>
+        <div>
             <Cardgame />
-        </segment>
+        </div>
     );
 }
 

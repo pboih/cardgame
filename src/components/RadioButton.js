@@ -1,4 +1,4 @@
-const RadioButton = ({ label, value, onChange}) => {
+const RadioButton = ({ label, value, checked, onChange}) => {
     
     return (
       <label>

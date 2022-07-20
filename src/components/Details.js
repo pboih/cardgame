@@ -3,7 +3,7 @@ import card_data from '../data/card_data';
 
 export default function Details() {
     const listCards = card_data.map((card) =>
-    <div>
+    <div key={card.id}>
         <h3>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</h3>
