@@ -43,7 +43,7 @@ export default function Overview({sortMode}) {
     //Display cards depending on mode (unsorted by default)
     if(sortMode === 'asc'){
     return(
-        <div>
+        <div onClick={() => alert(`hey`)}>
            <h2>{sortMode}</h2> 
            {listAsc}
         </div>
