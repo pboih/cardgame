@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react';
 //JSON Server as backend (install with npm) db.json
 export default function CardGame() {
     const [sortMode, setSortMode] = useState('');
+    const [selected, setSelected] = useState('');
+    
    
 
     const handleAscChange = () => {
@@ -24,16 +26,21 @@ export default function CardGame() {
         //submit Card from Details as JSON to backend 
     }
 
-    //TODOS: 1.implement sorting DONE 2.send Details to db.json 3.display cards (& expand) 4.css
+    const childToParent = (childdata) => {
+        setSelected(childdata);
+    }
+    
+
+    //TODOS: 1.implement sorting DONE 2.send Details to db.json 3.display cards DONE (& expand) 4.css
     return(
         <div>
-        <Details/>
+        <Details selected={selected}/>
         <Controls 
             sortMode={sortMode} 
             handleDescChange={handleDescChange} 
             handleAscChange={handleAscChange} 
             handleSubmit={handleSubmit}/>
-        <Overview sortMode={sortMode}/>
+        <Overview sortMode={sortMode} childToParent={childToParent}/>
         </div>
     )
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import card_data from '../data/card_data';
 
 
-export default function Overview({sortMode}) {
-    //List all cards
+export default function Overview({sortMode, childToParent}) {
+    //List all cards & send ID to parentcomponent when clicked
     const listCards = card_data.map((card) =>
-    <div key={card.id}>
+    <div key={card.id} onClick={() => childToParent(card.id)}>
         <p>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
@@ -17,9 +17,9 @@ export default function Overview({sortMode}) {
     a.real_name > b.real_name ? 1 : -1,
     );
 
-    //List cards in ascending order
+    //List cards in ascending order & send ID to parentcomponent when clicked
     const listAsc = strAscending.map((card) =>
-    <div key={card.id}>
+    <div key={card.id} onClick={() => childToParent(card.id)}>
         <p>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
@@ -31,9 +31,9 @@ export default function Overview({sortMode}) {
     a.real_name > b.real_name ? -1 : 1,
     );
     
-    //List cards in descending order
+    //List cards in descending order & send ID to parentcomponent when clicked
     const listDesc = strDescending.map((card) =>
-    <div key={card.id}>
+    <div key={card.id} onClick={() => childToParent(card.id)}>
         <p>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
@@ -43,7 +43,7 @@ export default function Overview({sortMode}) {
     //Display cards depending on mode (unsorted by default)
     if(sortMode === 'asc'){
     return(
-        <div onClick={() => alert(`hey`)}>
+        <div>
            <h2>{sortMode}</h2> 
            {listAsc}
         </div>
