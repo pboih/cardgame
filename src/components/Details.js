@@ -12,8 +12,8 @@ export default function Details({selected, cardData}) {
     );
     
     return(
-        <div>
+        <>
            {listCards[selected-1]}
-        </div>
+        </>
     )
 }

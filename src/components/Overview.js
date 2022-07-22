@@ -4,11 +4,11 @@ import React from 'react'
 export default function Overview({sortMode, childToParent, cardData}) {
     //List all cards & passed function from parent component
     const listCards = cardData.map((card) =>
-    <div key={card.id} onClick={() => childToParent(card.id)}>
+    <li key={card.id} onClick={() => childToParent(card.id)}>
         <p>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
-    </div>
+    </li>
     );
 
     //Sort all cards in ascending order
@@ -18,12 +18,11 @@ export default function Overview({sortMode, childToParent, cardData}) {
 
     //List cards in ascending order & passed function from parent component
     const listAsc = sortAscending.map((card) =>
-    <div key={card.id} onClick={() => childToParent(card.id)}>
-        <p>{card.id}</p>
+    <li key={card.id} onClick={() => childToParent(card.id)}>
         <p>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
-    </div>
+    </li>
     );
 
     //Sort all cards in descending order
@@ -33,34 +32,34 @@ export default function Overview({sortMode, childToParent, cardData}) {
     
     //List cards in descending order & passed function from parent component
     const listDesc = sortDescending.map((card) =>
-    <div key={card.id} onClick={() => childToParent(card.id)}>
+    <li key={card.id} onClick={() => childToParent(card.id)}>
         <p>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
-    </div>
+    </li>
     );
     
     //Display cards depending on mode (unsorted by default)
     if(sortMode === 'asc'){
     return(
-        <div>
+        <ul>
            <h2>{sortMode}</h2> 
            {listAsc}
-        </div>
+        </ul>
     );
     }
     if(sortMode === 'desc'){
         return (
-        <div>
+        <ul>
             <h2>{sortMode}</h2> 
            {listDesc}
-        </div>
+        </ul>
     );
     }
     else return (
-        <div>
+        <ul>
             <h2>{sortMode}</h2> 
            {listCards}
-        </div>
+        </ul>
     )
 }

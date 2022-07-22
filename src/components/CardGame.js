@@ -17,28 +17,32 @@ export default function CardGame() {
         cardService
             .getAll()
             .then(response => {
-                console.log('Database contents:', response)
+                console.log('Status Code: 200 OK')
             })
     }, [])
 
-//option1: selected ist id, suche in card_data nach card mit id (loop)
-//option2: sette alles über Details
 
    const addCard = (event) => {
 
     event.preventDefault()
     
-   //find objects and their elements from an array by "selected" id
+    //find objects and their elements from an array by "selected" id
     const cardObject = card_data.find((el) => el.id === selected);
-    
+   
+    if(selected !== ''){
     cardService
         .create(cardObject)
         .then(response => {
             alert(`Added ${cardObject.real_name}`);
             
         })
-        .catch(error => {console.log(error)});
-   }
+        .catch(error => {
+            console.log(error.response.data);
+            alert(`${cardObject.real_name} already added`);
+        });
+    
+    }
+}
 
     const handleAscChange = () => {
         setSortMode('asc');
@@ -54,15 +58,11 @@ export default function CardGame() {
         setSelected(childdata);
     }
     
-    const handleCardChange = (event) => {
-        console.log(event.target)
-        
-    }
 
 
     //TODOS: 1.implement sorting DONE 2.send Details to db.json DONE 3.display cards DONE (& expand) 4.css
     return(
-        <div>
+        <main>
         <Details selected={selected} cardData={card_data}/>
         <Controls 
             sortMode={sortMode} 
@@ -70,6 +70,6 @@ export default function CardGame() {
             handleAscChange={handleAscChange} 
             handleSubmit={addCard}/>
         <Overview sortMode={sortMode} childToParent={childToParent} cardData={card_data}/>
-        </div>
+        </main>
     )
 }
