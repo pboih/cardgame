@@ -1,10 +1,28 @@
 {
-    "cards": [
-        {
-            "id": 1,
-            "real_name": "Brianna Forbes",
-            "player_name": "Dreamlurk The Unstoppable",
-            "asset": "Foghammer Lead"
-        }
-    ]
-  }
+  "cards": [
+    {
+      "id": 1,
+      "real_name": "Brianna Forbes",
+      "player_name": "Dreamlurk The Unstoppable",
+      "asset": "Foghammer Lead"
+    },
+    {
+      "id": 2,
+      "real_name": "Darcy Candice Ball",
+      "player_name": "Crystaldash",
+      "asset": "Secret Glowquake Gold"
+    },
+    {
+      "id": 6,
+      "real_name": "Esmeralda Carrillo",
+      "player_name": "Skulldart",
+      "asset": "Yellow Orichalcum Of Paladins"
+    },
+    {
+      "id": 4,
+      "real_name": "Elva Becky Hammond",
+      "player_name": "Seekvenom The Mystic",
+      "asset": "Valkyries' Opal Adamant"
+    }
+  ]
+}
