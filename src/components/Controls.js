@@ -1,8 +1,7 @@
 import React from 'react';
 import RadioButton from './RadioButton';
 
-//TODO check how to pass down props from cardgame
-//props: sortmode, handleAscChange, handleDescChange
+
 export default function Controls({sortMode, handleAscChange, handleDescChange, handleSubmit,}) {
 
     return(

@@ -43,7 +43,6 @@ export default function Overview({sortMode, childToParent, cardData}) {
     if(sortMode === 'asc'){
     return(
         <ul>
-           <h2>{sortMode}</h2> 
            {listAsc}
         </ul>
     );
@@ -51,7 +50,6 @@ export default function Overview({sortMode, childToParent, cardData}) {
     if(sortMode === 'desc'){
         return (
         <ul>
-            <h2>{sortMode}</h2> 
            {listDesc}
         </ul>
     );

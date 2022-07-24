@@ -1,3 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.red-details {
+    color: red;
+}
+
+.card-game {  
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .row-top {
+    display:flex;
+    flex-direction:row;
+    min-height:10rem;
+  }
+  
+  .controls {
+    justify-self: end;
+   
+  }
+  
+  .overview {
+    align-self: stretch;
+    
+  }
+  
+  .details{
+    display:flex;
+  min-width: 30%;
+  }

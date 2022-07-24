@@ -23,26 +23,24 @@ export default function CardGame() {
 
 
    const addCard = (event) => {
-
     event.preventDefault()
     
     //find objects and their elements from an array by "selected" id
     const cardObject = card_data.find((el) => el.id === selected);
    
+    //prevent empty submission
     if(selected !== ''){
     cardService
         .create(cardObject)
         .then(response => {
             alert(`Added ${cardObject.real_name}`);
-            
         })
         .catch(error => {
             console.log(error.response.data);
             alert(`${cardObject.real_name} already added`);
         });
-    
+        }
     }
-}
 
     const handleAscChange = () => {
         setSortMode('asc');
@@ -60,16 +58,21 @@ export default function CardGame() {
     
 
 
-    //TODOS: 1.implement sorting DONE 2.send Details to db.json DONE 3.display cards DONE (& expand) 4.css
+//TODO 1.remove bullets from overview 2.overview in 3er columns 3. ellipsis text-overflow
     return(
-        <main>
-        <Details selected={selected} cardData={card_data}/>
+        <main className='card-game'>
+            <div className="row-top">
+        <Details selected={selected} cardData={card_data}
+        />
         <Controls 
             sortMode={sortMode} 
             handleDescChange={handleDescChange} 
             handleAscChange={handleAscChange} 
-            handleSubmit={addCard}/>
-        <Overview sortMode={sortMode} childToParent={childToParent} cardData={card_data}/>
+            handleSubmit={addCard}
+            />
+        </div>
+        <Overview sortMode={sortMode} childToParent={childToParent} cardData={card_data}
+        />
         </main>
     )
 }
