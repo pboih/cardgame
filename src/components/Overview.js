@@ -4,8 +4,9 @@ import React from 'react'
 export default function Overview({sortMode, childToParent, cardData}) {
     //List all cards & passed function from parent component
     const listCards = cardData.map((card) =>
-    <li key={card.id} onClick={() => childToParent(card.id)}>
-        <p>{card.real_name}<br/>
+    <li key={card.id} onClick={() => childToParent(card.id)}
+    className='card'>
+        <p className='card-text'>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
     </li>
@@ -18,8 +19,9 @@ export default function Overview({sortMode, childToParent, cardData}) {
 
     //List cards in ascending order & passed function from parent component
     const listAsc = sortAscending.map((card) =>
-    <li key={card.id} onClick={() => childToParent(card.id)}>
-        <p>{card.real_name}<br/>
+    <li key={card.id} onClick={() => childToParent(card.id)}
+    className='card'>
+        <p className='card-text' id={card.id}>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
     </li>
@@ -32,8 +34,9 @@ export default function Overview({sortMode, childToParent, cardData}) {
     
     //List cards in descending order & passed function from parent component
     const listDesc = sortDescending.map((card) =>
-    <li key={card.id} onClick={() => childToParent(card.id)}>
-        <p>{card.real_name}<br/>
+    <li key={card.id} onClick={() => childToParent(card.id)}
+    className='card'>
+        <p className='card-text'>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
     </li>
@@ -42,22 +45,30 @@ export default function Overview({sortMode, childToParent, cardData}) {
     //Display cards depending on mode (unsorted by default)
     if(sortMode === 'asc'){
     return(
-        <ul>
+        <>
+        <h1 className='card-title'>Overview</h1>
+        <ul className='card-container'>
            {listAsc}
         </ul>
+        </>
     );
     }
     if(sortMode === 'desc'){
         return (
-        <ul>
+        <>
+        <h1 className='card-title'>Overview</h1>
+        <ul className='card-container'>
            {listDesc}
         </ul>
+        </>
     );
     }
     else return (
-        <ul>
-            <h2>{sortMode}</h2> 
+        <>
+        <h1 className='card-title'>Overview</h1>
+        <ul className='card-container'>
            {listCards}
         </ul>
+        </>
     )
 }

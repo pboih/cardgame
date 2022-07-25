@@ -58,7 +58,6 @@ export default function CardGame() {
     
 
 
-//TODO 1.remove bullets from overview 2.overview in 3er columns 3. ellipsis text-overflow
     return(
         <main className='card-game'>
             <div className="row-top">
