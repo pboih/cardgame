@@ -1,17 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
 
-export default function Overview({sortMode, childToParent, cardData}) {
-    const [isActive, setActive] = useState("false");
-
-    const ToggleClass = () => {
-        setActive(!isActive);
-    };
-
+export default function Overview({sortMode, childToParent, cardData, selected}) {
+    
+  
     //List all cards & passed function from parent component
     const listCards = cardData.map((card) =>
     <li key={card.id} onClick={() => childToParent(card.id) }
-    className='card' id={`card-`+card.id}>
+     className={(card.id === selected) ? 'card--active' : 'card'} >
         <p className='card-text'>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
@@ -26,7 +22,7 @@ export default function Overview({sortMode, childToParent, cardData}) {
     //List cards in ascending order & passed function from parent component
     const listAsc = sortAscending.map((card) =>
     <li key={card.id} onClick={() => childToParent(card.id)}
-    className='card' id={`card-`+card.id}>
+    className={(card.id === selected) ? 'card--active' : 'card'} >
         <p className='card-text' id={card.id}>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>
@@ -41,7 +37,7 @@ export default function Overview({sortMode, childToParent, cardData}) {
     //List cards in descending order & passed function from parent component
     const listDesc = sortDescending.map((card) =>
     <li key={card.id} onClick={() => childToParent(card.id)}
-    className='card' id={`card-`+card.id}>
+    className={(card.id === selected) ? 'card--active' : 'card'} >
         <p className='card-text'>{card.real_name}<br/>
         {card.player_name}<br/>
         {card.asset}</p>

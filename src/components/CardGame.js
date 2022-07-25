@@ -70,7 +70,7 @@ export default function CardGame() {
             handleSubmit={addCard}
             />
         </div>
-        <Overview sortMode={sortMode} childToParent={childToParent} cardData={card_data}
+        <Overview sortMode={sortMode} childToParent={childToParent} cardData={card_data} selected={selected}
         />
         </main>
     )
