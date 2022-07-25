@@ -12,7 +12,7 @@
   .controls {
     display:flex;
     margin: 1rem 18rem 0rem auto;
-    background: #CB904D;
+    background: #a77c4b;
     min-width: 18rem;
     height: 10rem;
     border-radius: 2rem;
@@ -42,6 +42,7 @@
   }
   
   .radiobutton {
+    transition: 0.2s background;
     margin:0.5rem;
     padding: 1rem;
     border: 3px solid white;
@@ -52,7 +53,7 @@
   }
 
   .controls-submit{
-    background:rgb(246, 170, 28);
+    background:rgb(222, 160, 55);
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -66,7 +67,7 @@
     border: 3px solid white;
   }
   .controls-submit:hover{
-    background:#20c997;
+    background:rgb(246, 181, 62);;
   }
 
   .details {
@@ -110,6 +111,7 @@
 
 .card {
     background: #6f42c1;
+    transition: 0.2s background;
     min-width: 10rem;
     height: 10rem;
     list-style: none;
@@ -121,7 +123,7 @@
   }
   
  .card--active {
-    background: fuchsia;
+    background: #20c997;
     min-width: 10rem;
     height: 10rem;
     list-style: none;
@@ -132,7 +134,7 @@
   }
   
   .card:hover{
-    background: #20c997;
+    background: #9b70eb;
   }
 
   .card-title {
