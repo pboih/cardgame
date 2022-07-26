@@ -1,6 +1,6 @@
-.card-game {  
-  display: flex;
-  flex-direction: column;
+  .card-game {  
+    display: flex;
+    flex-direction: column;
   }
   
   .row-top {
@@ -109,7 +109,7 @@
 
   }
 
-.card {
+  .card {
     background: #6f42c1;
     transition: 0.2s background;
     min-width: 10rem;

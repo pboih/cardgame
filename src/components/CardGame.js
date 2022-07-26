@@ -61,8 +61,9 @@ export default function CardGame() {
     return(
         <main className='card-game'>
             <div className="row-top">
-        <Details selected={selected} cardData={card_data}
-        />
+        <Details selected={selected} 
+                cardData={card_data}
+            />
         <Controls 
             sortMode={sortMode} 
             handleDescChange={handleDescChange} 
@@ -70,8 +71,11 @@ export default function CardGame() {
             handleSubmit={addCard}
             />
         </div>
-        <Overview sortMode={sortMode} childToParent={childToParent} cardData={card_data} selected={selected}
-        />
+        <Overview sortMode={sortMode} 
+            childToParent={childToParent} 
+            cardData={card_data} 
+            selected={selected}
+            />
         </main>
     )
 }

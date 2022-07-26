@@ -4,7 +4,7 @@ import {useState} from 'react'
 export default function Overview({sortMode, childToParent, cardData, selected}) {
     
   
-    //List all cards & passed function from parent component
+    //List all cards & set selection on click
     const listCards = cardData.map((card) =>
     <li key={card.id} onClick={() => childToParent(card.id) }
      className={(card.id === selected) ? 'card--active' : 'card'} >
@@ -19,7 +19,7 @@ export default function Overview({sortMode, childToParent, cardData, selected}) 
     a.real_name > b.real_name ? 1 : -1,
     );
 
-    //List cards in ascending order & passed function from parent component
+    //List cards in ascending order & set selection on click
     const listAsc = sortAscending.map((card) =>
     <li key={card.id} onClick={() => childToParent(card.id)}
     className={(card.id === selected) ? 'card--active' : 'card'} >
@@ -34,7 +34,7 @@ export default function Overview({sortMode, childToParent, cardData, selected}) 
     a.real_name > b.real_name ? -1 : 1,
     );
     
-    //List cards in descending order & passed function from parent component
+    //List cards in descending order & set selection on click
     const listDesc = sortDescending.map((card) =>
     <li key={card.id} onClick={() => childToParent(card.id)}
     className={(card.id === selected) ? 'card--active' : 'card'} >
